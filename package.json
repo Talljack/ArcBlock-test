@@ -1,0 +1,68 @@
+{
+  "name": "blocklet-frontend",
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "blocklet dev",
+    "serve": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "start": "vite --host",
+    "clean": "node scripts/build-clean.js",
+    "bundle": "npm run clean && vite build && blocklet bundle --zip --create-release",
+    "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
+    "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
+    "bump-version": "zx --quiet scripts/bump-version.mjs",
+    "prepare": "simple-git-hooks"
+  },
+  "dependencies": {
+    "@clerk/clerk-react": "^5.0.0",
+    "@nextui-org/react": "^2.3.5",
+    "framer-motion": "^11.1.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.3",
+    "react-hot-toast": "^2.4.1",
+    "react-router-dom": "^6.22.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
+    "bumpp": "^9.4.0",
+    "eslint": "^9.1.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "postcss": "^8.4.38",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "simple-git-hooks": "^2.11.1",
+    "tailwindcss": "^3.4.3",
+    "talljack-eslint-config": "^0.2.4",
+    "vite": "^5.2.10",
+    "vite-plugin-blocklet": "^0.7.9",
+    "vite-plugin-svgr": "^4.2.0",
+    "vite-tsconfig-paths": "^4.3.2",
+    "zx": "^8.0.2"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint . --fix"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
