@@ -1,49 +1,55 @@
-import React from "react"
-import { useForm } from "react-hook-form"
-import { Button, Input, DateInput } from '@nextui-org/react'
-import { UserInfo } from "@/types/user"
-import { saveUserInfo } from '@/request'
+import React, { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { Button, Input } from '@nextui-org/react'
 import toast from 'react-hot-toast'
+import type { UserInfoType } from '@/types/user'
+import { saveUserInfo } from '@/request'
 
 interface Props {
-  userInfo: UserInfo
+  userInfo: UserInfoType
   className?: string
   onSuccess?: () => void
   onCancel?: () => void
 }
 
-
+/**
+ *
+ * @param props
+ */
 export default function UserInfoForm(props: Props) {
+  const [loading, setLoading] = useState(false)
   const {
     register,
     handleSubmit,
     formState: { errors, isValid },
-  } = useForm<UserInfo>({
-    values: props.userInfo
+  } = useForm<UserInfoType>({
+    values: props.userInfo,
   })
   const onSubmit = handleSubmit(async (data) => {
     if (isValid) {
-      console.log('data', data)
+      setLoading(true)
       await saveUserInfo(data)
       props.onSuccess?.()
+      setLoading(false)
       toast.success('Update profile successfully')
-    } else {
+    }
+    else {
       toast.error('Update profile failed')
     }
   })
 
-
   React.useEffect(() => {
-    register("name", {
-      validate: (value) => value?.length > 0 || "Name is required.",
+    register('name', {
+      validate: value => value?.length > 0 || 'Name is required.',
     })
-    register("phone", {
+    register('phone', {
       validate: (value) => {
         if (value) {
           const phoneNumberRe = /^1[3-9]\d{9}$/
           const valid = phoneNumberRe.test(value)
-          return valid || "Invalid phone number"
-        } else {
+          return valid || 'Invalid phone number'
+        }
+        else {
           return 'Phone number is required'
         }
       },
@@ -51,25 +57,20 @@ export default function UserInfoForm(props: Props) {
     register('email', {
       validate: (value) => {
         if (value) {
-          const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-          return re.test(String(value).toLowerCase()) || "Invalid email"
-        } else {
+          const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          return re.test(String(value).toLowerCase()) || 'Invalid email'
+        }
+        else {
           return 'Email is required'
         }
       },
     })
-    register('birthday', {
-      onChange: (value) => {
-        console.log('value', value)
-      }
-    })
   }, [register])
-
 
   return (
     <form onSubmit={onSubmit} className={`flex flex-col gap-5 h-full ${props.className}`}>
 
-      <div className="flex flex-1 flex-col gap-5">
+      <div className="flex flex-col flex-1 gap-5">
         <Input
           classNames={{
             label: 'text-black/50 w-14',
@@ -77,14 +78,13 @@ export default function UserInfoForm(props: Props) {
           }}
           label="Name"
           placeholder="Please input name"
-          {...register("name", { required: true })}
-          type='text'
+          {...register('name', { required: true })}
+          type="text"
           variant="bordered"
           labelPlacement="outside-left"
           isInvalid={!!errors.name}
           errorMessage={errors.name?.message}
         />
-
 
         <Input
           classNames={{
@@ -93,14 +93,13 @@ export default function UserInfoForm(props: Props) {
           }}
           label="Phone"
           placeholder="Please input phone"
-          {...register("phone", { required: true })}
+          {...register('phone', { required: true })}
           isInvalid={!!errors.phone}
           errorMessage={errors.phone?.message}
-          type='text'
+          type="text"
           variant="bordered"
           labelPlacement="outside-left"
         />
-
 
         <Input
           classNames={{
@@ -109,29 +108,12 @@ export default function UserInfoForm(props: Props) {
           }}
           label="Email"
           placeholder="Please input email"
-          {...register("email", { required: true })}
-          type='email'
+          {...register('email', { required: true })}
+          type="email"
           variant="bordered"
           labelPlacement="outside-left"
           isInvalid={!!errors.email}
           errorMessage={errors.email?.message}
-        />
-
-        <DateInput
-          classNames={{
-            label: 'text-black/50 w-14',
-            inputWrapper: 'min-w-56',
-          }}
-          // @ts-ignore
-          value={props.userInfo.birthday}
-          onChange={(value) => {
-            console.log('value', value)
-          }}
-          variant="bordered"
-          label="Birthday"
-          labelPlacement="outside-left"
-          isInvalid={!!errors.birthday}
-          errorMessage={errors.birthday?.message}
         />
         <Input
           classNames={{
@@ -140,8 +122,8 @@ export default function UserInfoForm(props: Props) {
           }}
           label="Bio"
           placeholder="Please input bio"
-          {...register("bio")}
-          type='text'
+          {...register('bio')}
+          type="text"
           variant="bordered"
           labelPlacement="outside-left"
           isInvalid={!!errors.email}
@@ -149,9 +131,9 @@ export default function UserInfoForm(props: Props) {
         />
       </div>
 
-      <div className="footer flex justify-between gap-4">
+      <div className="flex justify-between gap-4 footer">
         <Button className="flex-1" onClick={props.onCancel}>Cancel</Button>
-        <Button type="submit" color='success' className="flex-1">Save</Button>
+        <Button type="submit" color="success" className="flex-1" isLoading={loading}>Save</Button>
       </div>
     </form>
   )

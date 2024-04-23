@@ -8,5 +8,14 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 export default defineConfig(() => {
   return {
     plugins: [react(), createBlockletPlugin(), svgr(), tsconfigPaths()],
+    server: {
+      proxy: {
+        '/api': {
+          target: 'http://localhost:3000',
+          changeOrigin: true,
+          secure: false,
+        },
+      },
+    },
   }
 })

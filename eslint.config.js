@@ -7,5 +7,6 @@ export default createEslintConfig({
   formatters: true,
   rules: {
     'no-console': 'warn',
-  }
+    'react-hooks/exhaustive-deps': 'off',
+  },
 })

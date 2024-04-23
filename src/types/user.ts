@@ -1,9 +1,8 @@
-export type UserInfo = {
-  id: string;
-  name: string;
-  phone: string;
-  email: string;
-  avatar: string;
-  birthday: number | null;
-  bio: string;
+export interface UserInfoType {
+  id: string
+  name: string
+  phone: string
+  email: string
+  avatar: string
+  bio: string
 }

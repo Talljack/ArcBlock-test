@@ -1,10 +1,10 @@
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import { Button, NextUIProvider } from '@nextui-org/react'
 import './app.css'
+import { Toaster } from 'react-hot-toast'
+import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/clerk-react'
 import Home from './pages/home'
 import About from './pages/about'
-import { Toaster } from 'react-hot-toast'
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
 /**
  *
@@ -19,17 +19,19 @@ function App() {
           <div className="w-full bg-zinc-50/90 ring-1 ring-zinc-100" />
         </div>
       </div>
-      <header className='w-full min-h-14 fixed inset-x-0 top-0 z-10 flex items-center justify-between pr-4 pl-[30rem] bg-gray-500'>
-        <div>ArcBlock</div>
-        <div className='sign'>
-          <SignedOut>
-            <SignInButton>
-              <Button color='primary'>SignIn</Button>
-            </SignInButton>
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
+      <header className="fixed inset-x-0 top-0 z-10 flex items-center justify-between w-full pl-32 pr-8 bg-gray-500 min-[320px]:pl-16 min-h-14">
+        <div className="flex items-center justify-between w-full mx-auto">
+          <div>ArcBlock</div>
+          <div className="sign">
+            <SignedOut>
+              <SignInButton>
+                <Button color="primary">SignIn</Button>
+              </SignInButton>
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </div>
         </div>
       </header>
       <Routes>
