@@ -5,7 +5,7 @@ import { Toaster } from 'react-hot-toast'
 import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/clerk-react'
 import Home from './pages/home'
 import About from './pages/about'
-
+import React from 'react'
 /**
  *
  */

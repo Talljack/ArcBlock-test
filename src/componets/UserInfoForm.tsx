@@ -3,7 +3,8 @@ import { useForm } from 'react-hook-form'
 import { Button, Input } from '@nextui-org/react'
 import toast from 'react-hot-toast'
 import type { UserInfoType } from '../types/user'
-import { saveUserInfo } from '../request'
+import { updateUserInfo } from '../request'
+import  { dataHasChanged } from '../utils'
 
 interface Props {
   userInfo: UserInfoType
@@ -27,8 +28,13 @@ export default function UserInfoForm(props: Props) {
   })
   const onSubmit = handleSubmit(async (data) => {
     if (isValid) {
+      // 判断是否有变化
+      const changed = dataHasChanged(props.userInfo, data)
+      if (!changed) {
+        return
+      }
       setLoading(true)
-      await saveUserInfo(data)
+      await updateUserInfo(data)
       props.onSuccess?.()
       setLoading(false)
       toast.success('Update profile successfully')
@@ -57,8 +63,8 @@ export default function UserInfoForm(props: Props) {
     register('email', {
       validate: (value) => {
         if (value) {
-          const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          return re.test(String(value).toLowerCase()) || 'Invalid email'
+          const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
+          return emailRegex.test(value) || 'Invalid email'
         }
         else {
           return 'Email is required'
@@ -109,7 +115,7 @@ export default function UserInfoForm(props: Props) {
           label="Email"
           placeholder="Please input email"
           {...register('email', { required: true })}
-          type="email"
+          type="text"
           variant="bordered"
           labelPlacement="outside-left"
           isInvalid={!!errors.email}
@@ -126,8 +132,8 @@ export default function UserInfoForm(props: Props) {
           type="text"
           variant="bordered"
           labelPlacement="outside-left"
-          isInvalid={!!errors.email}
-          errorMessage={errors.email?.message}
+          isInvalid={!!errors.bio}
+          errorMessage={errors.bio?.message}
         />
       </div>
 

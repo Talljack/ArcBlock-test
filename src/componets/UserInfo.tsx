@@ -3,6 +3,7 @@ import { Avatar, Button, Card, CardBody, CardFooter, CardHeader, Spinner } from 
 import { useUser } from '@clerk/clerk-react'
 import type { UserInfoType } from '../types/user'
 import UserInfoForm from './UserInfoForm'
+import React from 'react'
 
 interface Props {
   userInfo: UserInfoType
