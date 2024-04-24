@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useUser } from '@clerk/clerk-react'
 import toast from 'react-hot-toast'
-import { getUserInfo, saveUserInfo } from '@/request'
-import type { UserInfoType } from '@/types/user'
-import UserInfo from '@/componets/UserInfo'
+import { getUserInfo, saveUserInfo } from '../request'
+import type { UserInfoType } from '../types/user'
+import UserInfo from '../componets/UserInfo'
 
 /**
  *

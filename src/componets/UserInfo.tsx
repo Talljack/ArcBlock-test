@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import { Avatar, Button, Card, CardBody, CardFooter, CardHeader, Spinner } from '@nextui-org/react'
 import { useUser } from '@clerk/clerk-react'
 import type { UserInfoType } from '../types/user'

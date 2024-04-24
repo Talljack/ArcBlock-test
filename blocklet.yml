@@ -4,9 +4,9 @@ description: A Blocklet Server blocklet
 keywords:
   - blocklet
   - react
-group: static
+group: dapp
 did: z2qa33kKDMg3TxK7rRtBuXLsyZgJ1TMeU4Jgs
-main: dist
+main: api/dist/index.js
 author:
   name: Yugang Cao
   email: yugang.cao12@gmail.com
@@ -20,6 +20,7 @@ files:
   - dist
   - logo.png
   - screenshots
+  - api/hooks/pre-start.js
 interfaces:
   - type: web
     name: publicUrl
@@ -41,8 +42,10 @@ requirements:
   os: "*"
   cpu: "*"
 scripts:
+  preStart: node api/hooks/pre-start.js
   dev: npm run start
 environments: []
 capabilities: {}
 screenshots: []
 components: []
+
