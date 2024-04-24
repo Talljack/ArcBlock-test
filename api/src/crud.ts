@@ -3,8 +3,9 @@ import { drizzle } from 'drizzle-orm/better-sqlite3'
 import Database from 'better-sqlite3'
 import { users } from './model/schema'
 import type { UserInfo } from './type'
+import path from 'path'
 
-const sqlite = new Database('api/src/db/arcBlock.db', { fileMustExist: true })
+const sqlite = new Database(path.resolve(__dirname, './db/arcBlock.db'), { fileMustExist: true })
 const db = drizzle(sqlite)
 
 export const getUserInfo = async (id: string) => {
