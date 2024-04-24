@@ -1,4 +1,4 @@
-import type { UserInfoType } from '@/types/user'
+import type { UserInfoType } from '../types/user'
 
 export const getUserInfo = async (id: string) => {
   return fetch('/api/user?id=' + id + '', {
@@ -8,7 +8,6 @@ export const getUserInfo = async (id: string) => {
     },
     mode: 'cors',
   }).then((res) => {
-    console.log('res', res)
     if (res.ok)
       return res.json()
     else
@@ -16,14 +15,15 @@ export const getUserInfo = async (id: string) => {
   })
 }
 
-export const saveUserInfo = async (userInfo: UserInfoType) => {
+export const updateUserInfo = async (userInfo: UserInfoType) => {
   return fetch('/api/user', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
+      "Content-Type": "application/json"
     },
     mode: 'cors',
-    body: new URLSearchParams(userInfo as unknown as Record<string, string>),
+    body: JSON.stringify(userInfo || {}),
   }).then((res) => {
     if (res.ok)
       return res.json()

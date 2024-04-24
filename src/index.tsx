@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom/client'
 import { ClerkProvider } from '@clerk/clerk-react'
 import App from './app'
+import React from 'react'
 
 // Import your publishable key
 // @ts-ignore

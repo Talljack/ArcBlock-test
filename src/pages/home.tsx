@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useUser } from '@clerk/clerk-react'
 import toast from 'react-hot-toast'
-import { getUserInfo, saveUserInfo } from '../request'
+import { getUserInfo, updateUserInfo } from '../request'
 import type { UserInfoType } from '../types/user'
 import UserInfo from '../componets/UserInfo'
+import React from 'react'
 
 /**
  *
@@ -32,7 +33,7 @@ function Home() {
             bio: '',
           }
           // 首次保存
-          saveUserInfo(userInfo).then(() => {
+          updateUserInfo(userInfo).then(() => {
             setUserInfo(userInfo)
           })
         }
@@ -56,11 +57,9 @@ function Home() {
     }
   }, [isEditing])
   return (
-    <>
-      <div className="relative">
-        <UserInfo userInfo={userInfo} className="grid max-w-2xl mx-auto" isEditing={isEditing} changeIsEditing={setIsEditing} requestLoading={requestLoading} />
-      </div>
-    </>
+    <div className="relative">
+      <UserInfo userInfo={userInfo} className="grid max-w-2xl mx-auto" isEditing={isEditing} changeIsEditing={setIsEditing} requestLoading={requestLoading} />
+    </div>
   )
 }
 
