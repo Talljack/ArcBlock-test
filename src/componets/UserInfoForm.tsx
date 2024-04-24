@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Button, Input } from '@nextui-org/react'
 import toast from 'react-hot-toast'
-import type { UserInfoType } from '@/types/user'
-import { saveUserInfo } from '@/request'
+import type { UserInfoType } from '../types/user'
+import { saveUserInfo } from '../request'
 
 interface Props {
   userInfo: UserInfoType

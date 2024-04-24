@@ -1,6 +1,5 @@
 {
   "name": "blocklet-frontend",
-  "type": "module",
   "version": "0.1.0",
   "files": [
     "dist"
@@ -10,45 +9,73 @@
     "serve": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "start": "vite --host",
+    "start": "cross-env NODE_ENV=development npx tsx api/dev.ts -w api",
+    "generate": "drizzle-kit generate:sqlite",
+    "db:push": "drizzle-kit push:sqlite",
     "clean": "esno scripts/build-clean.ts",
-    "bundle": "npm run clean && vite build && blocklet bundle --zip --create-release",
+    "bundle": "tsc --noEmit && npm run bundle:client && npm run bundle:api",
+    "bundle:client": "vite build",
+    "bundle:api": "npm run clean && tsc -p tsconfig.api.json && blocklet bundle --zip --create-release",
     "deploy": "npm run bundle && blocklet deploy .blocklet/bundle",
     "upload": "npm run bundle && blocklet upload .blocklet/release/blocklet.json",
-    "bump-version": "esno --quiet scripts/bump-version.ts",
+    "bump-version": "esno --quiet scripts/bump-version.mjs",
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
+    "@arcblock/did-auth": "^1.18.115",
+    "@arcblock/did-auth-storage-nedb": "^1.7.1",
+    "@blocklet/sdk": "^1.16.25",
     "@clerk/clerk-react": "^5.0.0",
     "@nextui-org/react": "^2.3.5",
+    "@ocap/client": "^1.18.115",
+    "@ocap/mcrypto": "^1.18.115",
+    "@ocap/wallet": "^1.18.115",
+    "axios": "^1.6.8",
+    "better-sqlite3": "^9.5.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv-flow": "^4.1.0",
+    "drizzle-orm": "^0.30.9",
     "esno": "^4.7.0",
+    "express": "^4.19.2",
+    "express-async-errors": "^3.1.1",
     "framer-motion": "^11.1.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.3",
     "react-hot-toast": "^2.4.1",
-    "react-router-dom": "^6.22.3"
+    "react-router-dom": "^6.23.0"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^7.6.10",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/cors": "^2.8.17",
+    "@types/dotenv-flow": "^3.3.3",
+    "@types/express": "^4.17.21",
     "@types/node": "^20.12.7",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.19",
     "bumpp": "^9.4.0",
-    "eslint": "^9.1.0",
+    "cross-env": "^7.0.3",
+    "drizzle-kit": "^0.20.17",
+    "eslint": "^9.1.1",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
+    "nodemon": "^3.1.0",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
     "rimraf": "^5.0.5",
     "simple-git-hooks": "^2.11.1",
     "tailwindcss": "^3.4.3",
     "talljack-eslint-config": "^0.2.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
     "vite": "^5.2.10",
     "vite-plugin-blocklet": "^0.7.9",
     "vite-plugin-svgr": "^4.2.0",
-    "vite-tsconfig-paths": "^4.3.2",
     "zx": "^8.0.2"
   },
   "simple-git-hooks": {
@@ -56,6 +83,16 @@
   },
   "lint-staged": {
     "*": "eslint . --fix"
+  },
+  "importSort": {
+    ".js, .jsx, .mjs": {
+      "parser": "babylon",
+      "style": "module"
+    },
+    ".ts, .tsx": {
+      "style": "module",
+      "parser": "typescript"
+    }
   },
   "browserslist": {
     "production": [
