@@ -25,7 +25,7 @@
     "@arcblock/did-auth": "^1.18.115",
     "@arcblock/did-auth-storage-nedb": "^1.7.1",
     "@blocklet/sdk": "^1.16.25",
-    "@clerk/clerk-react": "^5.0.0",
+    "@clerk/clerk-react": "^5.0.1",
     "@nextui-org/react": "^2.3.5",
     "@ocap/client": "^1.18.115",
     "@ocap/mcrypto": "^1.18.115",

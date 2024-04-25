@@ -15,8 +15,8 @@ dependencies:
     specifier: ^1.16.25
     version: 1.16.25
   '@clerk/clerk-react':
-    specifier: ^5.0.0
-    version: 5.0.0(eslint@9.1.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.5)
+    specifier: ^5.0.1
+    version: 5.0.1(eslint@9.1.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.5)
   '@nextui-org/react':
     specifier: ^2.3.5
     version: 2.3.5(@types/react@18.2.79)(framer-motion@11.1.7)(react-dom@18.2.0)(react@18.2.0)(tailwind-variants@0.2.1)(tailwindcss@3.4.3)
@@ -801,15 +801,15 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@clerk/clerk-react@5.0.0(eslint@9.1.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.5):
-    resolution: {integrity: sha512-IQf1LIL4leVC5reWo5iAPVAg6rklxgRxPmkbGNOqu9bQC8CLDtwjNjYi8nt52YgEcuNO+hGeLZbDZOgldwTqrg==}
+  /@clerk/clerk-react@5.0.1(eslint@9.1.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.5):
+    resolution: {integrity: sha512-JMwOtFFYGfEOI7Ux3Hg5QbuSYSUN1srf3rL6ORK6hgNuTbS1Cd24v6XZz3c7xfMo6yL70o870gXi20FecdeYYw==}
     engines: {node: '>=18.17.0'}
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
     dependencies:
       '@clerk/shared': 2.0.0(react-dom@18.2.0)(react@18.2.0)
-      '@clerk/types': 4.0.0
+      '@clerk/types': 4.1.0
       eslint-config-custom: 0.0.0(eslint@9.1.1)(typescript@5.4.5)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -842,8 +842,8 @@ packages:
       swr: 2.2.0(react@18.2.0)
     dev: false
 
-  /@clerk/types@4.0.0:
-    resolution: {integrity: sha512-my/uNzHflLYvoLR8RT3LBmYulYGkz+SOVYMdzWt14LpRHajQotnfDSq/GEkfjrBm2HXuZ82GxEDMyYtqHUKv8w==}
+  /@clerk/types@4.1.0:
+    resolution: {integrity: sha512-e9vsD7EdQE0q9mPwPMq1kPtPC9BYGR8BucEoEu+pEyXXD5cdSkzM+WvhUonnTHNzYE/W/X5d1zFDNvCV5YfS5Q==}
     engines: {node: '>=18.17.0'}
     dependencies:
       csstype: 3.1.1
