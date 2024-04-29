@@ -12,8 +12,8 @@ dependencies:
     specifier: ^1.7.1
     version: 1.7.1
   '@blocklet/sdk':
-    specifier: ^1.16.25
-    version: 1.16.25
+    specifier: ^1.16.26
+    version: 1.16.26
   '@clerk/clerk-react':
     specifier: ^5.0.0
     version: 5.0.0(eslint@9.1.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.5)
@@ -173,12 +173,12 @@ packages:
     resolution: {integrity: sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==}
     engines: {node: '>=0.10.0'}
 
-  /@abtnode/client@1.16.25:
-    resolution: {integrity: sha512-JXu0sRxXk31lCG3vgArR0goEC0jVxIQgg1T6DodULkyJZcVxDxxKD9rkK9e/ez3ExWrBF/pTuEmsCtAKN3nv9A==}
+  /@abtnode/client@1.16.26:
+    resolution: {integrity: sha512-N5N1fsu8uz33tOqEJWxgqsbtC2Zrf5W0KooJKXluYtIy0BQSKIEDoMngaCf/uxzazmWQ+/iOmP1NbbajFTWFwQ==}
     dependencies:
       '@arcblock/sdk-util': 0.34.3
-      '@ocap/util': 1.18.113
-      '@ocap/wallet': 1.18.113
+      '@ocap/util': 1.18.115
+      '@ocap/wallet': 1.18.115
       axios: 0.27.2(debug@4.3.4)
       blueimp-md5: 2.19.0
       core-js: 3.37.0
@@ -191,8 +191,8 @@ packages:
       - supports-color
     dev: false
 
-  /@abtnode/constant@1.16.25:
-    resolution: {integrity: sha512-cbjf8Q9QEIHWtjXUJ8gvoMUvP0VtneIWz/CdP3JiRuMDWF5DbzwYphrCrHL02HadehBLFrV7hJfl1vO7pPzYcQ==}
+  /@abtnode/constant@1.16.26:
+    resolution: {integrity: sha512-cYc8jVy/EkHrfGrJP2y8WNJtZgTR97gHKQHik8CUES9nYOU/5pzWZgoKUaaBA53BSiXGHldoY61/2k7cCaL3Og==}
     dev: false
 
   /@alloc/quick-lru@5.2.0:
@@ -231,28 +231,6 @@ packages:
     resolution: {integrity: sha512-yFqCUyjWydgbB+LgK1rYiAh3srDZ/SwE6+jFuHR8oU+jSkv/JssppgS1pNE70cUcZVZIkD40ptVh3xPaHOvv2Q==}
     dev: false
 
-  /@arcblock/did-auth@1.18.113:
-    resolution: {integrity: sha512-DI1dQXYELm29VpHzGRqyUTGLT6N0Vi9N/4gYqQ1URFLUmooazgFFW0rlUUsFKFalFzamlLMv212UBGyW/3lzBw==}
-    dependencies:
-      '@arcblock/did': 1.18.113
-      '@arcblock/jwt': 1.18.113
-      '@arcblock/validator': 1.18.113
-      '@ocap/client': 1.18.113
-      '@ocap/mcrypto': 1.18.113
-      '@ocap/util': 1.18.113
-      '@ocap/wallet': 1.18.113
-      debug: 4.3.4(supports-color@5.5.0)
-      json-stable-stringify: 1.1.1
-      lodash: 4.17.21
-      semver: 7.6.0
-      tweetnacl-sealedbox-js: 1.2.0
-    transitivePeerDependencies:
-      - bufferutil
-      - encoding
-      - supports-color
-      - utf-8-validate
-    dev: false
-
   /@arcblock/did-auth@1.18.115:
     resolution: {integrity: sha512-CooCsmtzb4lP9gmtjFytktbyGrqId4jjZy9Tu5YynbJYodCks8xVazbv0DWgygImoqtZlU8uHRn/AhKgY1qPvw==}
     dependencies:
@@ -275,31 +253,17 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@arcblock/did-ext@1.18.113:
-    resolution: {integrity: sha512-iBi/nVdPh0hRUGc0fnhqgZ5TzK5//asF7IHzM/ySB9ueRgpwgSMkQlTSmDSdJQ2d1m971SuqdpjoOs3EX/ztIQ==}
+  /@arcblock/did-ext@1.18.115:
+    resolution: {integrity: sha512-VUkNnNcYoOdUK0i1HGc1+rrHF2Vl5upICZLjEEMr153kUhTg2NV0vYlVHVN2pvWQSXfcFNc0tLkpWE8KL1HDoQ==}
     dependencies:
-      '@arcblock/did': 1.18.113
-      '@ocap/mcrypto': 1.18.113
-      '@ocap/util': 1.18.113
-      '@ocap/wallet': 1.18.113
+      '@arcblock/did': 1.18.115
+      '@ocap/mcrypto': 1.18.115
+      '@ocap/util': 1.18.115
+      '@ocap/wallet': 1.18.115
       '@wangshijun/hdkey': 2.0.5
       bn.js: 5.2.1
       debug: 4.3.4(supports-color@5.5.0)
       lodash: 4.17.21
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
-  /@arcblock/did-util@1.18.113:
-    resolution: {integrity: sha512-XeKPmJtmSGNqllmzI4gO1o5YZeTQ42g3ZiroNKnd3tmE9z7VtwmnUtiE+LJf/Kavtzeyy4m5GNr+LyguG5SoQw==}
-    dependencies:
-      '@arcblock/did': 1.18.113
-      '@ocap/mcrypto': 1.18.113
-      '@ocap/message': 1.18.113
-      '@ocap/proto': 1.18.113
-      '@ocap/types': 1.18.113
-      '@ocap/util': 1.18.113
-      '@ocap/wallet': 1.18.113
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -318,18 +282,6 @@ packages:
       - supports-color
     dev: false
 
-  /@arcblock/did@1.18.113:
-    resolution: {integrity: sha512-d/LkpRFNN3kGkHi9Z/Oc07cehGhgTVv5hCg8RS1/uDv23vG2UvhOpuVdXd/h/OdZPxghWNXo5oOX1aP0DGD4EQ==}
-    dependencies:
-      '@ocap/mcrypto': 1.18.113
-      '@ocap/util': 1.18.113
-      bn.js: 5.2.1
-      debug: 4.3.4(supports-color@5.5.0)
-      lodash: 4.17.21
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
   /@arcblock/did@1.18.115:
     resolution: {integrity: sha512-TLYCAH/JaWfVMQOXsSKXlvnjb+3gPVuaqGclJ0SvMdhrBjlaCALLRf8HSdQ8I2HZD8xLBjmlwja1I6cTym6u6g==}
     dependencies:
@@ -341,18 +293,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@arcblock/event-hub@1.18.113:
-    resolution: {integrity: sha512-PNq0/xsROB4IXODdTYGqCg3nTlO48cZT+WZCyDIYvC7MggxnwpwGWQERMl64d3EOIZe1kpm1bGG6v2D++MCfVw==}
-    dependencies:
-      '@arcblock/did': 1.18.113
-      '@arcblock/jwt': 1.18.113
-      '@ocap/wallet': 1.18.113
-      amp-message: 0.1.2
-      axon: 2.0.3
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
   /@arcblock/event-hub@1.18.115:
     resolution: {integrity: sha512-8QeO3jjbO9ZcVF7aefUvbxUXRncmTXxMluCbxobNwA0adHi0rph+A9iC470QuDJ6t0hXLtzhHqVWAiSFa4HJbQ==}
     dependencies:
@@ -361,19 +301,6 @@ packages:
       '@ocap/wallet': 1.18.115
       amp-message: 0.1.2
       axon: 2.0.3
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
-  /@arcblock/jwt@1.18.113:
-    resolution: {integrity: sha512-ZrP6Jw6+Nx/kfjo8vywggf3RnLxA6jCwOVEa8oMJaDFJ3L5ZI1joTpXm1FxqomYezR6iaUYgsyZRqH4kRlUBOQ==}
-    dependencies:
-      '@arcblock/did': 1.18.113
-      '@ocap/mcrypto': 1.18.113
-      '@ocap/util': 1.18.113
-      debug: 4.3.4(supports-color@5.5.0)
-      json-stable-stringify: 1.1.1
-      semver: 7.6.0
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -405,19 +332,6 @@ packages:
       - supports-color
     dev: false
 
-  /@arcblock/validator@1.18.113:
-    resolution: {integrity: sha512-SQ9BM43JOhK6sFKQZ88Nbi0puVBDKTfohBTYpT2wK9sLOFZ+pydHcIuunoz9gtdTO5qDopKMS23NxAcoeF0fAQ==}
-    dependencies:
-      '@arcblock/did': 1.18.113
-      '@ocap/mcrypto': 1.18.113
-      '@ocap/util': 1.18.113
-      bn.js: 5.2.1
-      joi: 17.11.0
-      lodash: 4.17.21
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
   /@arcblock/validator@1.18.115:
     resolution: {integrity: sha512-KbGfJ9w/qA+o6nCBQ8eMu4VWdhJdJoHC9lwefTIaj1EkTagax/VyRNad0m+eX4BAgUykw5dagjdzkaen5jIbHw==}
     dependencies:
@@ -426,21 +340,6 @@ packages:
       '@ocap/util': 1.18.115
       bn.js: 5.2.1
       joi: 17.13.0
-      lodash: 4.17.21
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
-  /@arcblock/vc@1.18.113:
-    resolution: {integrity: sha512-eFFAq40Z3DrOVZySzJZYVKrFn1tShUPditoTQ5UYQihrLz0eL/FU/jCvcNJZ+TOt5BzF7IeBAfxiUUbabY/Gmg==}
-    dependencies:
-      '@arcblock/did': 1.18.113
-      '@ocap/mcrypto': 1.18.113
-      '@ocap/util': 1.18.113
-      '@ocap/wallet': 1.18.113
-      debug: 4.3.4(supports-color@5.5.0)
-      is-absolute-url: 3.0.3
-      json-stable-stringify: 1.1.1
       lodash: 4.17.21
     transitivePeerDependencies:
       - supports-color
@@ -459,21 +358,6 @@ packages:
       lodash: 4.17.21
     transitivePeerDependencies:
       - supports-color
-    dev: false
-
-  /@arcblock/ws@1.18.113:
-    resolution: {integrity: sha512-AEF1/38rkjucRD/1evuGLTtgDys2YnIl1Q1GWv5Hq61kUiyzpzH+m1OCxBPng5XRa64sSiEt3X5bwEz24BZK7g==}
-    dependencies:
-      '@arcblock/event-hub': 1.18.113
-      debug: 4.3.4(supports-color@5.5.0)
-      eventemitter3: 4.0.7
-      lodash: 4.17.21
-      phoenix: 1.7.2
-      ws: 8.16.0
-    transitivePeerDependencies:
-      - bufferutil
-      - supports-color
-      - utf-8-validate
     dev: false
 
   /@arcblock/ws@1.18.115:
@@ -715,30 +599,30 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@blocklet/constant@1.16.25:
-    resolution: {integrity: sha512-fQaqFUulbIFKYe8HawA096nUh1KpZHW8FDnbvlLJUyZzc+UJ5jc+2SR+bY0TQ9AUh63pjz0aRCIxhCEqcSDUKw==}
+  /@blocklet/constant@1.16.26:
+    resolution: {integrity: sha512-ZUP6VM4ylTmxfvlRiYuGd/VWDbAKmipLarM1kqbIJYFUxyADjXuiBUxFwKnk1R6OkPk5YFF7ZsRJ/vKNaKVf4Q==}
     dev: false
 
-  /@blocklet/env@1.16.25:
-    resolution: {integrity: sha512-D368s7FBg9mc/D9KTqk36Rd35j0vD3MHhpr0O7X7kNIYJVj1juug0FkKEnMuEXrNkPbCnlqJ+SE988rd0nCdtA==}
+  /@blocklet/env@1.16.26:
+    resolution: {integrity: sha512-ilVEGeioal7+qMZ1QA2MfSLkFJXNA7ShvwpNPnxc4IEjh6cjYRY2ZWM5m5nXhrw4NcOZP+pI/loX61IR7ZP3AA==}
     dependencies:
-      '@blocklet/constant': 1.16.25
+      '@blocklet/constant': 1.16.26
     dev: false
 
-  /@blocklet/meta@1.16.25:
-    resolution: {integrity: sha512-c0Z6b3Dto0R8shPeTtwDvBQsMclTGy3J73zJ0cSF0c82aBjiCdf1lIoZ/W7cQc++zQjrD6AgnykU1sMLn7eYQg==}
+  /@blocklet/meta@1.16.26:
+    resolution: {integrity: sha512-vcllgfWxDOoxx/LdHT5bIH89k63vRW9jeEyE+PF8dKD2C3rB/bnJNAP5SVNOFlf9xLQ0yMpB7z6dvBg3M2wNUQ==}
     dependencies:
-      '@abtnode/constant': 1.16.25
-      '@arcblock/did': 1.18.113
-      '@arcblock/did-ext': 1.18.113
-      '@arcblock/did-util': 1.18.113
-      '@arcblock/jwt': 1.18.113
-      '@blocklet/constant': 1.16.25
-      '@ocap/asset': 1.18.113
-      '@ocap/mcrypto': 1.18.113
-      '@ocap/types': 1.18.113
-      '@ocap/util': 1.18.113
-      '@ocap/wallet': 1.18.113
+      '@abtnode/constant': 1.16.26
+      '@arcblock/did': 1.18.115
+      '@arcblock/did-ext': 1.18.115
+      '@arcblock/did-util': 1.18.115
+      '@arcblock/jwt': 1.18.115
+      '@blocklet/constant': 1.16.26
+      '@ocap/asset': 1.18.115
+      '@ocap/mcrypto': 1.18.115
+      '@ocap/types': 1.18.115
+      '@ocap/util': 1.18.115
+      '@ocap/wallet': 1.18.115
       ajv: 8.12.0
       axios: 0.27.2(debug@4.3.4)
       cjk-length: 1.0.0
@@ -749,8 +633,8 @@ packages:
       is-absolute-url: 3.0.3
       is-glob: 4.0.3
       is-var-name: 2.0.0
-      joi: 17.11.0
-      joi-extension-semver: 5.0.0(joi@17.11.0)
+      joi: 17.12.2
+      joi-extension-semver: 5.0.0(joi@17.12.2)
       js-yaml: 4.1.0
       json-stable-stringify: 1.1.1
       lodash: 4.17.21
@@ -764,27 +648,27 @@ packages:
       - supports-color
     dev: false
 
-  /@blocklet/sdk@1.16.25:
-    resolution: {integrity: sha512-G7LpVks484Nc1eveqSa9vjPSQjknaDMh/cK7yzVT+F4Kz8iaCyCbGRYR4CcEZbmbUImmepD958RnVVlCCbU2tA==}
+  /@blocklet/sdk@1.16.26:
+    resolution: {integrity: sha512-yOZ0YEKTDliQYMinamY0h0h22VYJyuY9lxSk/qVdAci/KEcbj4tkhP+9vnRVS0eiSGpL2qfi6UyaJ+SDDAojog==}
     dependencies:
-      '@abtnode/client': 1.16.25
-      '@abtnode/constant': 1.16.25
-      '@arcblock/did': 1.18.113
-      '@arcblock/did-auth': 1.18.113
-      '@arcblock/jwt': 1.18.113
-      '@arcblock/ws': 1.18.113
-      '@blocklet/constant': 1.16.25
-      '@blocklet/env': 1.16.25
-      '@blocklet/meta': 1.16.25
+      '@abtnode/client': 1.16.26
+      '@abtnode/constant': 1.16.26
+      '@arcblock/did': 1.18.115
+      '@arcblock/did-auth': 1.18.115
+      '@arcblock/jwt': 1.18.115
+      '@arcblock/ws': 1.18.115
+      '@blocklet/constant': 1.16.26
+      '@blocklet/env': 1.16.26
+      '@blocklet/meta': 1.16.26
       '@did-connect/authenticator': 2.2.4
       '@did-connect/handler': 2.2.4
       '@nedb/core': 2.1.5
-      '@ocap/mcrypto': 1.18.113
-      '@ocap/wallet': 1.18.113
+      '@ocap/mcrypto': 1.18.115
+      '@ocap/wallet': 1.18.115
       axios: 0.27.2(debug@4.3.4)
       cheerio: 1.0.0-rc.12
       fs-extra: 11.2.0
-      joi: 17.11.0
+      joi: 17.12.2
       json-stable-stringify: 1.1.1
       lodash: 4.17.21
       lru-cache: 6.0.0
@@ -3187,28 +3071,6 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  /@ocap/asset@1.18.113:
-    resolution: {integrity: sha512-t1P8Vqg7y7461Lj51OJr7XPq3MzhOhgasWCFE9bqwPI6EXGWPwuVMwqCpbnL4Xcb8Ej/d9Z7gBtqvES07shFOQ==}
-    dependencies:
-      '@arcblock/did': 1.18.113
-      '@arcblock/did-util': 1.18.113
-      '@arcblock/validator': 1.18.113
-      '@arcblock/vc': 1.18.113
-      '@ocap/contract': 1.18.113
-      '@ocap/mcrypto': 1.18.113
-      '@ocap/types': 1.18.113
-      '@ocap/util': 1.18.113
-      '@ocap/wallet': 1.18.113
-      debug: 4.3.4(supports-color@5.5.0)
-      flat: 5.0.2
-      is-absolute-url: 3.0.3
-      json-stable-stringify: 1.1.1
-      lodash: 4.17.21
-      mustache: 4.2.0
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
   /@ocap/asset@1.18.115:
     resolution: {integrity: sha512-lyHOKqscj8J8nnjuy3SQw2dO5lCEeJNFJ1pvAw4JgC5BuoqhPeH/6ilRZSlO89BL6QAZtS/xUhAh/g5KsNuKJg==}
     dependencies:
@@ -3229,36 +3091,6 @@ packages:
       mustache: 4.2.0
     transitivePeerDependencies:
       - supports-color
-    dev: false
-
-  /@ocap/client@1.18.113:
-    resolution: {integrity: sha512-H8qQ/JlWCXcmOgCoCWwbJAd+QEF9RPmfdkgZxfRVWymMMhf2eZd2QedMwRdgWgxavJyL5k3QzCnFQsOYqBTnWQ==}
-    dependencies:
-      '@arcblock/did': 1.18.113
-      '@arcblock/did-util': 1.18.113
-      '@arcblock/jwt': 1.18.113
-      '@arcblock/sdk-util': 0.34.3
-      '@arcblock/ws': 1.18.113
-      '@ocap/asset': 1.18.113
-      '@ocap/mcrypto': 1.18.113
-      '@ocap/message': 1.18.113
-      '@ocap/proto': 1.18.113
-      '@ocap/util': 1.18.113
-      '@ocap/wallet': 1.18.113
-      blueimp-md5: 2.19.0
-      buffer: 6.0.3
-      debug: 4.3.4(supports-color@5.5.0)
-      is-absolute-url: 3.0.3
-      jsonpack: 1.1.5
-      lodash: 4.17.21
-      react-app-polyfill: 1.0.6
-      readable-stream: 3.6.0
-      wolfy87-eventemitter: 5.2.9
-    transitivePeerDependencies:
-      - bufferutil
-      - encoding
-      - supports-color
-      - utf-8-validate
     dev: false
 
   /@ocap/client@1.18.115:
@@ -3291,19 +3123,6 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@ocap/contract@1.18.113:
-    resolution: {integrity: sha512-m8HIq+1KVvDKJ9tXVeTnZoHUZ31pA8uBN5LZmneS9WCkWqEad01SRUMqeUlUEnDkVHrwKclR+GWN1cSBWiNSUw==}
-    dependencies:
-      '@arcblock/did': 1.18.113
-      '@ocap/mcrypto': 1.18.113
-      '@ocap/util': 1.18.113
-      debug: 4.3.4(supports-color@5.5.0)
-      esprima: 4.0.1
-      lodash: 4.17.21
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
   /@ocap/contract@1.18.115:
     resolution: {integrity: sha512-auhB/Ee88JJKL7tIFIWWbgYzq60mkBG3BaLGijI49YKFpUOPxcz/ptjJjmLEiSkgzsjlHtMw4kbtCgwHK+6vQg==}
     dependencies:
@@ -3315,21 +3134,6 @@ packages:
       lodash: 4.17.21
     transitivePeerDependencies:
       - supports-color
-    dev: false
-
-  /@ocap/mcrypto@1.18.113:
-    resolution: {integrity: sha512-P4fyQBjqPQ+gpBUbSPxXQwM3x+8r6sWpFNEv+1aIfOuTb3JI6dh6DcQvTGbf8kQ2JBg5+PrP5RiLMZXCSYlOZg==}
-    dependencies:
-      '@ocap/util': 1.18.113
-      bn.js: 5.2.1
-      crypto-js: 4.2.0
-      elliptic: 6.5.5
-      eth-lib: 0.2.8
-      hash.js: 1.1.7
-      interface: 1.2.1
-      js-sha3: 0.8.0
-      randombytes: 2.1.0
-      tweetnacl: 1.0.3
     dev: false
 
   /@ocap/mcrypto@1.18.115:
@@ -3346,18 +3150,6 @@ packages:
       randombytes: 2.1.0
       tweetnacl: 1.0.3
 
-  /@ocap/message@1.18.113:
-    resolution: {integrity: sha512-HD09WLeBwBkMEfLUbXLXxRo/8CpIqFq8uFWKaqixbVH7efrGxs9pHPRaehKXSzqtulkwAA2eriGhSL/1AIl5NA==}
-    dependencies:
-      '@ocap/proto': 1.18.113
-      '@ocap/util': 1.18.113
-      debug: 4.3.4(supports-color@5.5.0)
-      google-protobuf: 3.21.0
-      lodash: 4.17.21
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
   /@ocap/message@1.18.115:
     resolution: {integrity: sha512-N8UWm6rgZg+hcvLITFEfSsysvVcLoF1VlgAsugpSIZ/OSMoQXZ4FxDevKFDTW+dzlVpz3SKvKOoxPGCTKgCBNg==}
     dependencies:
@@ -3365,15 +3157,6 @@ packages:
       '@ocap/util': 1.18.115
       debug: 4.3.4(supports-color@5.5.0)
       google-protobuf: 3.21.0
-      lodash: 4.17.21
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
-  /@ocap/proto@1.18.113:
-    resolution: {integrity: sha512-ERDyIZfGTaCNogCaXXSzRbcWHbPlyvw7qXcQrJJaxKni6ynAQTErje0tDC+UFYyKCYfN47EDl/hswkgtyfzZ4A==}
-    dependencies:
-      debug: 4.3.4(supports-color@5.5.0)
       lodash: 4.17.21
     transitivePeerDependencies:
       - supports-color
@@ -3388,26 +3171,10 @@ packages:
       - supports-color
     dev: false
 
-  /@ocap/types@1.18.113:
-    resolution: {integrity: sha512-+5m3Hcnuc2Bn4DM1mBmpEmuGI4q4+3udcsjATYLdKCGtpqt4nfM3fgC3QErOwCr3WmgOMmlSPhJ9uRnZb2mFdw==}
-    dependencies:
-      google-protobuf: 3.21.0
-    dev: false
-
   /@ocap/types@1.18.115:
     resolution: {integrity: sha512-JJ53J1wcFOnZYPHdMVDk32N5M+TDLC1SbmU8tBFU7QHHft32E4ArkjfU6xhmpIZxnN09AnANFlgT5Yb+BhKO2Q==}
     dependencies:
       google-protobuf: 3.21.0
-    dev: false
-
-  /@ocap/util@1.18.113:
-    resolution: {integrity: sha512-PtXXMihjGBRMwjg3K4OEQ8nHcHRDlTQmyeN4V8NsCgeZhZEmm/pgoFnh5Hd8oIcPWB/vLjCVK8ylwjlm4InEeA==}
-    dependencies:
-      base64-url: 2.3.3
-      bn.js: 5.2.1
-      bs58: 5.0.0
-      lodash: 4.17.21
-      utf8: 3.0.0
     dev: false
 
   /@ocap/util@1.18.115:
@@ -3418,16 +3185,6 @@ packages:
       bs58: 5.0.0
       lodash: 4.17.21
       utf8: 3.0.0
-
-  /@ocap/wallet@1.18.113:
-    resolution: {integrity: sha512-PGXj4p4AqHc13tiL5XxxreylAh0qYCOi6zKRa0ysIE0HN9Kxjp01j8i/xJsFx7nHQUkqPOoCxEGAp8cemE0GqQ==}
-    dependencies:
-      '@arcblock/did': 1.18.113
-      '@ocap/mcrypto': 1.18.113
-      '@ocap/util': 1.18.113
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
 
   /@ocap/wallet@1.18.115:
     resolution: {integrity: sha512-Fjmovz4I722rWIUuOUzZ75k3DQM90Ga1foDoi55qRhnDFbEQZ9maJKvw+R/b4qrOPZANtvWg0tlRZzhWqL9ysQ==}
@@ -8773,18 +8530,18 @@ packages:
     resolution: {integrity: sha512-gFqAIbuKyyso/3G2qhiO2OM6shY6EPP/R0+mkDbyspxKazh8BXDC5FiFsUjlczgdNz/vfra0da2y+aHrusLG/Q==}
     hasBin: true
 
-  /joi-extension-semver@5.0.0(joi@17.11.0):
+  /joi-extension-semver@5.0.0(joi@17.12.2):
     resolution: {integrity: sha512-g23Majx+TFtxRHAcQn48j+GYts2E0opkUieNxJ6PzLz1dKKZHrKYuEt3p/JY+RgJmyEG961E0dekTuilns8fVA==}
     engines: {node: '>=12'}
     peerDependencies:
       joi: '>=17.2.0'
     dependencies:
-      joi: 17.11.0
+      joi: 17.12.2
       semver: 6.3.1
     dev: false
 
-  /joi@17.11.0:
-    resolution: {integrity: sha512-NgB+lZLNoqISVy1rZocE9PZI36bL/77ie924Ri43yEvi9GUUMPeyVIr8KdFTMUlby1p0PBYMk9spIxEUQYqrJQ==}
+  /joi@17.12.2:
+    resolution: {integrity: sha512-RonXAIzCiHLc8ss3Ibuz45u28GOsWE1UpfDXLbN/9NKbL4tCJf8TWYVKsoYuuh+sAUt7fsSNpA+r2+TBA6Wjmw==}
     dependencies:
       '@hapi/hoek': 9.3.0
       '@hapi/topo': 5.1.0
