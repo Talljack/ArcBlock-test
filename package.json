@@ -31,7 +31,7 @@
     "@ocap/mcrypto": "^1.18.115",
     "@ocap/wallet": "^1.18.115",
     "axios": "^1.6.8",
-    "better-sqlite3": "^9.5.0",
+    "better-sqlite3": "^11.1.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv-flow": "^4.1.0",
